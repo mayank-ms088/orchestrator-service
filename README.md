@@ -50,3 +50,49 @@
     )(*datamock.User,error)
 
 ```
+
+## Steps to generate go codes from proto files:
+
+```
+    make clean
+```
+
+```
+    make build
+```
+
+## Steps to run:
+
+### 1. Run Server-1 in one terminal, which is the first instance of orchestrator service
+
+```
+    make server-1
+```
+
+### 2. Run Server-2 in other terminal, which is the second instance of orchestrator service
+
+```
+    make server-2
+```
+
+### 3. Run Dummy Data service in another terminal instance
+
+```
+    make data-server
+```
+
+### 4. Run the client in another terminal, and get the output
+
+```
+    make client
+```
+
+## Requirements
+
+```
+    OS Used: "ubuntu 20.04 LTS"
+    GOPATH : "/home/montooboss/go/golib"
+    PATH   : "$PATH:$GOPATH/bin"
+    GO-Version: "go version go1.17.6 linux/amd64"
+    Protoc Version: "libprotoc 3.6.1"
+```
