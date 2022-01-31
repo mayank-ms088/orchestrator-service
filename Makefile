@@ -3,7 +3,9 @@ gen_orchestrator:
 clean_orchestrator:
 	rm -r orchestrator/stubs/*
 server-1:
-	go run server/Main.go -port 9000
+	go run logic/server/Main.go -port 9000
+server-2:
+	go run logic/server/Main.go -port 9001
 client:
 	go run logic/client/Main.go -address 0.0.0.0:9000
 
