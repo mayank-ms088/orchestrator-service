@@ -4,5 +4,12 @@ clean_orchestrator:
 	rm -r orchestrator/stubs/*
 server-1:
 	go run server/Main.go -port 9000
-client-1:
-	go run client/Main.go -address 0.0.0.0:9000
+client:
+	go run logic/client/Main.go -address 0.0.0.0:9000
+
+gen_data:
+	protoc --proto_path=datamock/proto datamock/proto/*.proto --go-grpc_out=datamock/stubs --go_out=datamock/stubs
+clean_data:
+	rm -r datamock/stubs/*
+data_server:
+	go run logic/server/dummyDataServer/Main.go -port 10000

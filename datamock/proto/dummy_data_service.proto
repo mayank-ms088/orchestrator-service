@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package datamock;
+option go_package="/datamock";
+message RPCRequest{
+    string name=1;
+}
+
+message User{
+    string name=1;
+    string class=2;
+    int64 roll=3;
+}
+
+service DummyDataService{
+    rpc GetMockUserData(RPCRequest) returns(User){};
+}
